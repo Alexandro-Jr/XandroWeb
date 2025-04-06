@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-header">
+        <h1>Welcome to the Finance App</h1>
+        <p>Your financial management made easy.</p>
+    </div>
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="logo" style="text-align: center; margin-top: 20px;">
+                <a href="index.html" class="logo-link">
+                    <img src="logo.png" alt="Logo" class="logo-img" width="120px" height="120px">
+                </a>
+            </div>
+            <h2>Finance App</h2>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="receipts.html">Receipts</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="payment.html" class="active">Payments</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header>
+                <h1>Make a Payment</h1>
+            </header>
+
+            <section class="payment-form">
+                <h2>Payment Details</h2>
+                <form id="paymentForm" action="process_payment.php" method="POST" enctype="multipart/form-data">
+                    <label for="student_name">Student Name:</label>
+                    <input type="text" id="student_name" name="student_name" required>
+                   
+                    <lebel for="student_id">Student ID:</label>
+                    <input type="text" id="student_id" name="student_id" required>
+
+                    <label for="amount">Amount:</label>
+                    <input type="number" id="amount" name="amount" required>
+
+                    <label for="payment_method">Payment Method:</label>
+                    <select id="payment_method" name="payment_method" required>
+                        <option value="cash">Cash</option>
+                        <option value="card">Card</option>
+                    </select>
+
+                    <label for="date">Payment Date:</label>
+                    <input type="date" id="date" name="date" required>
+
+                    <label for="description">Description:</label>
+                    <input type="text" id="description" name="description" placeholder="Enter payment details">
+
+                    <label for="receipt_file">Upload Receipt (Optional):</label>
+                    <input type="file" id="receipt_file" name="receipt_file" accept=".jpg,.png,.pdf">
+
+                    <button type="submit">Submit Payment</button>
+                </form>
+            </section>
+
+            <section class="payment-table">
+                <h2>Payment History</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Amount</th>
+                            <th>Method</th>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Receipt</th>
+                        </tr>
+                    </thead>
+                    <tbody id="paymentTableBody">
+                        <!-- Data Loaded via process_payment.php -->
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+</body>
+<footer>
+    <p>&copy; 2023 Finance App. All rights reserved.<br> Powered By: Xandro Tech Solutions Liberia</p>
+</footer>
+</html>

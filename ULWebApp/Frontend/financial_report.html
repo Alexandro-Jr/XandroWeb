@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Reports</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="report.js"></script>
+</head>
+<body>
+    <div class="container-header">
+        <h1>Welcome to the Finance App</h1>
+        <p>Your financial management made easy.</p>
+    </div>
+    <nav class="sidebar">
+        <div class="logo" style="text-align: center; margin-top: 20px;">
+            <a href="index.html" class="logo-link">
+                <img src="logo.png" alt="Logo" class="logo-img" width="120px" height="120px">
+            </a>
+        </div>
+        <h2>Finance App</h2>
+        <ul>
+            <li><a href="index.html" class="active">Dashboard</a></li>
+            <li><a href="receipts.html">Receipts</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="payment.html">Payments</a></li>
+        </ul>
+    </nav>
+    <h2>Generate Financial Report</h2>
+    <form id="reportForm">
+        <label for="start_date">Start Date:</label>
+        <input type="date" id="start_date" name="start_date" required>
+        
+        <label for="end_date">End Date:</label>
+        <input type="date" id="end_date" name="end_date" required>
+        
+        <button type="submit">Generate Report</button>
+    </form>
+    
+    <h3>Report Summary</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Total Amount</th>
+            </tr>
+        </thead>
+        <tbody id="reportTable">
+            <!-- Report data will be inserted here -->
+        </tbody>
+    </table>
+    
+    <canvas id="reportChart"></canvas>
+</body>
+<footer>
+    <p>&copy; 2023 Finance App. All rights reserved.<br> Powered By: Xandro Tech Solutions Liberia</p>
+</footer>
+</html>

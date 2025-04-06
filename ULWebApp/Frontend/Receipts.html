@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-header">
+        <h1>Welcome to the Finance App</h1>
+        <p>Your financial management made easy.</p>
+    </div>
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="logo" style="text-align: center; margin-top: 20px;">
+                <a href="index.html" class="logo-link">
+                    <img src="logo.png" alt="Logo" class="logo-img" width="120px" height="120px">
+                </a>
+            </div>
+            <h2>Finance App</h2>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="receipts.html" class="active">Receipts</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="payment.html">Payments</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header>
+                <h1>Manage Receipts</h1>
+            </header>
+
+            <section class="receipt-form">
+                <h2>Upload a Receipt</h2>
+                <form id="uploadForm">
+                    <label for="amount">Amount:</label>
+                    <input type="number" id="amount" name="amount" required>
+
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+
+                    <label for="category">Category:</label>
+                    <select id="category" name="category">
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+
+                    <label for="receipt_file">Upload Receipt:</label>
+                    <input type="file" id="receipt_file" name="receipt_file" accept=".jpg,.png,.pdf" required>
+
+                    <button type="submit">Upload</button>
+                </form>
+            </section>
+
+            <section class="receipt-table">
+                <h2>Uploaded Receipts</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th>Receipt</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="receiptTableBody">
+                        <!-- Data Fetched from Backend -->
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+<footer>
+    <p>&copy; 2023 Finance App. All rights reserved.<br> Powered By: Xandro Tech Solutions Liberia</p>
+</footer>
+</html>
